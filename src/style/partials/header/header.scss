@@ -1,5 +1,6 @@
 .header {
   position: relative;
+  z-index: 200;
   width: 300px;
 
   &-heading {
@@ -60,6 +61,14 @@
         }
 
         &:hover {
+          color: #5b83fd;
+
+          &:before {
+            opacity: 1;
+          }
+        }
+
+        &.is-active {
           color: #5b83fd;
 
           &:before {
