@@ -39,4 +39,38 @@ $(document).ready(function(){
         $select.removeClass('is-active');
     });
 
+
+    $(document).on('change', '.calc-checkbox input', function(){
+        const id = $(this).data('id');
+        $(`.calc-row[data-id="${id}"]`).toggleClass('is-active');
+    });
+
+    $(document).on('click', '.technologies-item', function(){
+        const $this = $(this);
+        const itemCount = $this.data('item');
+        $('.technologies-item').removeClass('is-active');
+        $this.addClass('is-active');
+        $('.technologies-slide').removeClass('is-active');
+        $(`.technologies-slide[data-item="${itemCount}"]`).addClass('is-active');
+    });
+
+    $(document).on('click', '.technologies-slide-close', function(e){
+        e.preventDefault();
+        const $this = $(this);
+        const item = $this.parents('.technologies-slide')
+        const itemCount = item.data('item');
+        item.removeClass('is-active');
+        $(`.technologies-item[data-item="${itemCount}"]`).removeClass('is-active');
+    });
+
+    $('[data-fancybox]').fancybox({
+		touch: false,
+		scrolling: 'no',
+		beforeShow: function(){
+			$("body").css({'overflow-y':'hidden'});
+		},
+		afterClose: function(){
+			$("body").css({'overflow-y':'visible'});
+		}
+	});
 })
