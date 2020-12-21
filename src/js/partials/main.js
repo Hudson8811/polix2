@@ -98,4 +98,31 @@ $(document).ready(function(){
         $('.bigMenu').removeClass('is-active');
         $('.bigMenu-content').removeClass('is-active');
     });
+
+    $('.prices-heading-tabs-item').click(function(){
+        const content = $(this).data('content');
+        $('.prices-heading-tabs-item').removeClass('is-active');
+        $(this).addClass('is-active');
+        $('.prices-content').hide();
+        $(`.prices-content[data-content="${content}"]`).show();
+    });
+
+    $(document).on('focus','.application-form-label input[type="text"], .application-form-label input[type="email"], .application-form-label textarea', function(){
+        $(this).parent('.application-form-label').addClass('is-active');
+    } );
+
+    $(document).on('blur','.application-form-label input[type="text"], .application-form-label input[type="email"], .application-form-label textarea', function(){
+        if($(this).val() == ""){
+            $(this).parent('.application-form-label').removeClass('is-active');
+        }
+    } );
+
+    $(document).on('change','.application-form-label input[type="file"]', function(){
+        var file = $(this)[0].files[0]
+            if (file){
+            $(this).parent('.application-form-label').addClass('is-active');
+              $('.application-form-file-name').text(file.name);
+            }
+    } );
+
 })

@@ -702,7 +702,6 @@
     line-height: 150%;
     letter-spacing: 0.05em;
     color: #5b83fd;
-    margin-right: 32px;
   }
 
   &-btn {
@@ -1095,14 +1094,14 @@
   }
 
   &-bot {
-    position: relative;
-    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 
     span {
+      position: relative;
+      z-index: 1;
       display: block;
       font-weight: normal;
       font-size: 15px;

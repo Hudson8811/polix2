@@ -1,0 +1,115 @@
+.appointment-section {
+  padding-top: 96px;
+
+  .appointment-catalog {
+    padding-top: 0;
+  }
+}
+
+.just-banner {
+  position: relative;
+  padding: 111px 81px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(42, 57, 80, 0.86) 0%, rgba(42, 57, 80, 0) 31.97%),
+      linear-gradient(0deg, rgba(42, 57, 80, 0.6), rgba(42, 57, 80, 0.6));
+  }
+
+  &-title {
+    position: relative;
+    z-index: 2;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 43px;
+    font-family: $f2;
+    color: #ffffff;
+    margin-bottom: 56px;
+    max-width: 528px;
+  }
+
+  &-link {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ef4665;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 199px;
+    height: 48px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 135%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.shades {
+  padding-top: 96px;
+
+  &-catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: -20px;
+  }
+
+  &-item {
+    width: calc(16.666% - 100px / 6);
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    &:nth-child(6n) {
+      margin-right: 0;
+    }
+
+    p {
+      display: block;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 150%;
+      text-align: center;
+      color: #2d3139;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      font-size: 15px;
+      line-height: 150%;
+      text-align: center;
+      color: #979eb0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-color {
+    display: block;
+    height: 208px;
+    width: calc(100% - 66px);
+    margin: 0 auto 16px;
+  }
+}

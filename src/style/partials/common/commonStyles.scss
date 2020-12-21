@@ -124,12 +124,22 @@ body {
 .bigMenu {
   position: fixed;
   top: 0;
-  left: 300px;
-  width: calc(100% - 300px);
+  left: 0;
+  width: 100%;
   height: 100vh;
   transition: 0.2s;
   z-index: 100;
   transform: translateX(calc(-100% - 300px));
+
+  &-container {
+    position: relative;
+    height: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-left: 300px;
+  }
 
   &.is-active {
     transform: translateX(0);
