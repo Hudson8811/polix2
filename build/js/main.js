@@ -151,6 +151,19 @@ $(document).ready(function(){
             $(this).parent('.application-form-label').addClass('is-active');
               $('.application-form-file-name').text(file.name);
             }
-    } );
+    });
+
+    $(document).on('change','input[type="color"]', function(){
+        const color = $(this).val()
+        $(this).siblings('.task-color-value').text(color);
+    });
+
+    $('.tabs-heading-item').click(function(){
+        const content = $(this).data('tabs');
+        $('.tabs-heading-item').removeClass('is-active');
+        $(this).addClass('is-active');
+        $('.tabs-content').removeClass('is-active');
+        $(`.tabs-content[data-tabs="${content}"]`).addClass('is-active');
+    });
 
 })

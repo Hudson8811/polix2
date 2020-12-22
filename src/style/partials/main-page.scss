@@ -783,6 +783,29 @@
       color: #2d3139;
     }
   }
+
+  &-radio {
+    margin: 0 12px 14px;
+
+    .calc-checkbox-icon b {
+      border-radius: 50%;
+    }
+    .calc-checkbox-text {
+      font-size: 13px;
+    }
+
+    .calc-checkbox-icon {
+      margin-right: 10px;
+    }
+
+    &-wrap {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0 -12px -14px;
+    }
+  }
 }
 
 .technologies {
@@ -1337,6 +1360,16 @@
           object-fit: cover;
         }
       }
+    }
+  }
+
+  &-link-wrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    a + a {
+      margin-left: 32px;
     }
   }
 }
