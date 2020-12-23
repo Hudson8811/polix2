@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Контакты</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="wrapper wrapper-flex">
+      //= common/header
+
+      <main class="main">
+        <div class="contacts-breadcrumbs">
+          <div class="container">
+            <ul class="breadcrumbs">
+              <li>
+                <a href="#">Главная</a>
+              </li>
+    
+              <li>
+                <span>Контакты</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contacts">
+          <div class="container">
+            <h2 class="section-title">Обратная связь</h2>
+
+            <div class="contacts-map-wrapper">
+              <div class="contacts-map">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A54b2c04cd1da23a9ace3edb19e377f60f35e69abbff9a971bb3f459c6a4e0010&amp;source=constructor" controls="0" width="100%" height="100%" frameborder="0"></iframe> 
+              </div>
+
+              <div class="contacts-content">
+                <div class="contacts-content-top">
+                  <div class="contacts-content-item">
+                    <h3>адрес</h3>
+                    <p>МО, г. Химки, 74-й км МКАД владение 5, офис 205</p>
+                  </div>
+                  <div class="contacts-content-item">
+                    <h3>Контакты</h3>
+                    <a href="tel:+74959251661">+7 (495) 925-16-61</a>
+                    <a href="mailto:zakaz@polixstroi.ru">zakaz@polixstroi.ru</a>
+                  </div>
+                  <div class="contacts-content-item">
+                    <h3>график работы</h3>
+                    <p>c 9-00 до 21-00 без выходных</p>
+                  </div>
+                </div>
+
+                <div class="contacts-content-bot">
+                  <p><b>ООО «Поликс Групп»</b></p>
+                  <p><b>ОГРН</b> 1165047062223</p>
+                  <p><b>ИНН</b> 5047191688</p>
+                  <p><b>КПП</b> 504701001</p>
+                </div>
+              </div>
+              <div class="contacts-form">
+                <div class="contacts-form-overlay"></div>
+                
+                <div class="contacts-form-content">
+                  <a href="#" class="contacts-form-btn">
+                    <img src="img/mail.svg" alt="">
+                    <img src="img/form-arrow.svg" alt="">
+                  </a>
+                  <form class="application-form">
+                    <label class="application-form-label">
+                      <input type="text">
+                      <span>ФИО</span>
+                    </label>
+                    <div class="application-form-row">
+                      <label class="application-form-label">
+                        <input type="email">
+                        <span>email адрес</span>
+                      </label>
+                      <label class="application-form-label">
+                        <input type="text">
+                        <span>номер телефона</span>
+                      </label>
+                    </div>
+                    <label class="application-form-label application-form-label-for_text">
+                      <textarea></textarea>
+                      <span>Сообщение</span>
+                    </label>
+                    <label class="application-form-label application-form-label-for_file">
+                      <input type="file">
+                      <span>Добавить файл</span>
+                      <p class="application-form-file-name"></p>
+                      <p class="application-form-file-btn">выбрать</p>
+                    </label>
+         
+                    <div class="application-form-submit">
+                      <div class="application-form-polic">
+                        <label class="application-form-polic-check">
+                          <input type="checkbox">
+                          <b></b>
+                        </label>
+                        <p>Я принимаю условия <a href="#">пользоваського соглашения</a></p>
+                      </div>
+                      <button class="calc-btn">оформить заявку</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              
+          </div>
+        </div>
+
+        
+        //= common/footer
+
+      </main>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

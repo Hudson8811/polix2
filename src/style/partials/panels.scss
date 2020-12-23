@@ -251,6 +251,39 @@
 .tabs {
   padding-top: 96px;
 
+  .tabs-scroll {
+    position: relative;
+    margin-left: -28px;
+
+    p {
+      font-weight: bold;
+
+      & + p {
+        margin-top: 24px;
+      }
+    }
+
+    span {
+      font-weight: normal;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 2;
+      bottom: -29px;
+      left: 12px;
+      width: 100%;
+      height: 97px;
+      background: linear-gradient(0deg, #ffffff 31.44%, rgba(255, 255, 255, 0) 64.43%);
+    }
+  }
+
+  .mCustomScrollbar {
+    height: 423px;
+  }
+
   .section-title {
     margin-bottom: 32px;
   }
@@ -391,6 +424,37 @@
       }
     }
 
+    ol {
+      display: block;
+      list-style: none;
+      margin: 20px 0 32px;
+
+      li {
+        display: block;
+        position: relative;
+        padding-left: 23px;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 150%;
+        color: #2d3139;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 3px;
+          left: 0;
+          width: 17px;
+          height: 15px;
+          background: center / auto url(../img/check.svg) no-repeat;
+        }
+
+        & + li {
+          margin-top: 10px;
+        }
+      }
+    }
+
     &-bot {
       a:nth-child(2) {
         display: block;
@@ -422,6 +486,25 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+
+  &-img-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-bottom: -2px;
+
+    img {
+      width: calc(50% - 1px);
+      height: auto;
+      margin-bottom: 2px;
+      margin-right: 2px;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
     }
   }
 }
