@@ -7,6 +7,11 @@
     padding: 80px 88px 52px;
     background: #384359;
     display: flex;
+
+    @include dMax {
+      flex-wrap: wrap;
+      padding: 40px 40px 32px;
+    }
   }
 
   &-menu {
@@ -18,14 +23,33 @@
       width: 158px;
       padding-right: 112px;
       margin-right: 0;
+
+      @include dMax {
+        width: auto;
+        max-width: 175px;
+        padding-right: 20px;
+        margin-right: auto;
+      }
     }
 
     &:nth-child(2) {
       max-width: 174px;
+
+      @include dMax {
+        width: auto;
+        max-width: 175px;
+        padding-right: 20px;
+        margin-right: auto;
+      }
     }
 
     &:nth-child(3) {
       max-width: 164px;
+
+      @include dMax {
+        width: fit-content;
+        margin-right: 0;
+      }
     }
 
     li {
@@ -58,11 +82,27 @@
   &-adress {
     max-width: 215px;
 
+    @include dMax {
+      max-width: none;
+      width: 100%;
+      padding-top: 32px;
+      margin-top: 40px;
+      border-top: 1px solid #454e62;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
     &-heading {
       display: block;
       font-size: 14px;
       margin-bottom: 30px;
       font-weight: 550;
+
+      @include dMax {
+        width: 100%;
+      }
     }
 
     &-title {
@@ -76,15 +116,30 @@
 
     &-desc {
       font-size: 14px;
-
-      & + .footer-adress-title {
-        margin-top: 25px;
-      }
     }
 
     .header-phone-link {
       display: block;
       margin-top: 20px;
+    }
+
+    &-col {
+      & + & {
+        margin-top: 25px;
+      }
+
+      @include dMax {
+        &:nth-child(2),
+        &:nth-child(3) {
+          max-width: 200px;
+          margin-right: auto;
+        }
+
+        &:nth-child(4) {
+          max-width: 131px;
+          padding-left: 35px;
+        }
+      }
     }
   }
 
@@ -97,8 +152,18 @@
     justify-content: flex-start;
     align-items: center;
 
+    @include dMax {
+      padding: 48px 40px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
     .header-social {
       margin-top: 0;
+
+      @include dMax {
+        display: flex;
+      }
     }
 
     &:before {
@@ -153,6 +218,13 @@
       width: 158px;
       padding-right: 112px;
       margin-right: 0;
+
+      @include dMax {
+        width: 100%;
+        padding-right: 0;
+        order: 1;
+        margin-top: 32px;
+      }
     }
 
     &:nth-child(2) {

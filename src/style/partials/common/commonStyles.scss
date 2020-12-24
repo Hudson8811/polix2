@@ -38,6 +38,18 @@ body {
       .container {
         margin-left: 0;
       }
+
+      @include dMax {
+        width: 100%;
+        padding-top: 103px;
+        margin-left: 0;
+
+        .container {
+          margin-left: auto;
+          margin-right: auto;
+          width: calc(100% - 78px);
+        }
+      }
     }
   }
 }
@@ -54,6 +66,10 @@ body {
   height: 183px;
   text-decoration: none;
   overflow: hidden;
+
+  @include dMax {
+    height: 141px;
+  }
 
   &:before {
     content: '';
@@ -88,6 +104,11 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #ffffff;
+
+    @include dMax {
+      font-size: 15px;
+      line-height: 135%;
+    }
   }
 
   &-link {
@@ -104,8 +125,10 @@ body {
   }
 
   &:hover {
-    .banner-block-image {
-      transform: scale(1.1);
+    @include dMin {
+      .banner-block-image {
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -119,6 +142,12 @@ body {
   text-align: center;
   color: #2d3139;
   margin-bottom: 56px;
+
+  @include dMax {
+    font-size: 25px;
+    line-height: 31px;
+    margin-bottom: 32px;
+  }
 }
 
 .bigMenu {
@@ -130,6 +159,10 @@ body {
   transition: 0.2s;
   z-index: 100;
   transform: translateX(calc(-100% - 300px));
+
+  @include dMax {
+    display: none;
+  }
 
   &-container {
     position: relative;

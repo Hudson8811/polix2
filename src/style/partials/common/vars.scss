@@ -4,6 +4,18 @@
   }
 }
 
+@mixin dMax {
+  @media (max-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin dMin {
+  @media (min-width: 1301px) {
+    @content;
+  }
+}
+
 $f1: 'HelveticaNeueCyr', sans-serif;
 $f2: 'Gilroy', sans-serif;
 
