@@ -1,5 +1,7 @@
 .banner {
   &-mobile-btn {
+    position: relative;
+    z-index: 2;
     width: 100%;
     height: 48px;
     max-width: 199px;
@@ -253,9 +255,20 @@
     align-items: stretch;
     margin-top: 2px;
 
+    @include pMax {
+      display: block;
+      margin-top: 0;
+    }
+
     .banner-block {
       width: calc(33.333% - 4px / 3);
       margin-right: 2px;
+
+      @include pMax {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 2px;
+      }
 
       &:nth-child(3n) {
         margin-right: 0;
@@ -271,6 +284,10 @@
     padding-top: 48px;
   }
 
+  @include pMax {
+    padding-top: 40px;
+  }
+
   &-wrapper {
     display: flex;
     justify-content: flex-start;
@@ -280,6 +297,11 @@
 
     @include dMax {
       margin-bottom: -40px;
+    }
+
+    @include pMax {
+      display: block;
+      margin-bottom: -32px;
     }
   }
 
@@ -307,6 +329,12 @@
       &:nth-child(2n) {
         margin-right: 0;
       }
+    }
+
+    @include pMax {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 32px;
     }
   }
 
@@ -361,6 +389,10 @@
     padding-top: 64px;
   }
 
+  @include pMax {
+    margin-top: 48px;
+  }
+
   &-row {
     display: flex;
     justify-content: flex-start;
@@ -369,6 +401,11 @@
 
     @include dMax {
       flex-wrap: wrap;
+    }
+
+    @include pMax {
+      display: block;
+      margin-bottom: 0;
     }
 
     & + & {
@@ -385,6 +422,10 @@
       justify-content: flex-start;
       align-items: stretch;
     }
+
+    @include pMax {
+      display: block;
+    }
   }
 
   &-big-col {
@@ -399,6 +440,10 @@
       margin-left: 0;
       margin-bottom: 2px;
       box-sizing: border-box;
+    }
+
+    @include pMax {
+      display: none;
     }
   }
 
@@ -494,6 +539,11 @@
       &:nth-child(2n) {
         margin-right: 0;
       }
+    }
+
+    @include pMax {
+      width: 100%;
+      margin-right: 0;
     }
 
     &:before {
@@ -621,6 +671,15 @@
           margin-right: 0;
         }
       }
+
+      @include pMax {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+
+    @include pMax {
+      display: block;
     }
   }
 }
@@ -628,6 +687,18 @@
 .calc {
   &-section {
     padding-top: 96px;
+
+    @include dMax {
+      padding-top: 64px;
+    }
+
+    @include pMax {
+      padding-top: 40px;
+
+      .container {
+        width: 100% !important;
+      }
+    }
   }
 
   &-col {
@@ -700,6 +771,10 @@
       padding-left: 40px;
       padding-right: 40px;
 
+      &:nth-last-child(3) {
+        border-bottom: 0;
+      }
+
       &:nth-child(1) {
         padding-top: 40px;
         padding-bottom: 24px;
@@ -760,8 +835,75 @@
         }
       }
 
-      &:nth-last-child(2) {
+      &:nth-last-child(3) {
         border-bottom: 0;
+      }
+    }
+
+    @include pMax {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      .calc-col + .calc-col {
+        margin-top: 16px;
+      }
+
+      &:nth-child(1) {
+        padding-top: 32px;
+        padding-bottom: 16px;
+      }
+
+      &:nth-child(2) {
+        padding-bottom: 35px;
+      }
+
+      &:nth-child(3) {
+        padding-bottom: 12px;
+      }
+
+      &:last-child {
+        .calc-row-result {
+          display: block;
+        }
+        .calc-btn {
+          display: none;
+        }
+
+        .calc-row-result-content {
+          width: 100%;
+          margin-right: 0;
+          text-align: center;
+
+          p {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: block;
+        padding-top: 24px;
+
+        .calc-col {
+          width: 100%;
+          margin-right: 0;
+          margin-left: 0;
+
+          &:first-child {
+            width: 100%;
+            margin-right: 0;
+            display: block;
+            min-height: 1px;
+            margin-bottom: 16px;
+
+            p {
+              display: block;
+              text-align: center;
+            }
+          }
+        }
       }
     }
 
@@ -818,6 +960,7 @@
 
       &.is-active {
         display: flex;
+        border-top: 1px solid #dee4f1;
       }
     }
 
@@ -1119,11 +1262,33 @@
   }
 }
 
+.calc-row.calc-row-mobile {
+  display: none;
+
+  @include pMax {
+    display: block;
+    padding: 32px 15px;
+    background: #f4f4f4;
+    border: 1px solid #dee4f1;
+    border-top: 0;
+
+    .calc-btn {
+      display: flex;
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
 .technologies {
   padding-top: 96px;
 
   @include dMax {
     display: none;
+  }
+
+  @include pMax {
+    padding-top: 48px;
   }
 
   .section-title {
@@ -1361,8 +1526,70 @@
 .how-work {
   padding-top: 96px;
 
+  &-pag {
+    width: 45px;
+    margin: 0 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+      &:nth-child(1) {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 150%;
+        color: #6b7285;
+      }
+
+      &:nth-child(2) {
+        font-size: 25px;
+        color: #979eb0;
+        padding: 0 6px;
+      }
+
+      &:last-child {
+        font-weight: 550;
+        font-size: 11px;
+        line-height: 150%;
+        color: #979eb0;
+      }
+    }
+  }
+
+  &-tools {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 36px auto 0;
+    width: 121px;
+
+    @include pMax {
+      display: flex;
+    }
+
+    .slick-arrow {
+      width: 22px;
+      height: 12px;
+      color: transparent;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: transparent center / auto url(../img/polix-arrow.svg) no-repeat;
+      cursor: pointer;
+
+      &.slick-next {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
   @include dMax {
     padding-top: 64px;
+  }
+
+  @include pMax {
+    padding-top: 48px;
   }
 
   &-catalog {
@@ -1374,6 +1601,11 @@
 
     @include dMax {
       margin-bottom: -30px;
+    }
+
+    @include pMax {
+      display: block;
+      margin: 0 -10px 0;
     }
   }
 
@@ -1451,6 +1683,16 @@
         }
       }
     }
+
+    @include pMax {
+      display: flex !important;
+      margin: 0 10px;
+      padding: 64px 24px 24px;
+
+      .how-work-bot {
+        margin-top: auto;
+      }
+    }
   }
 
   &-bot {
@@ -1486,6 +1728,11 @@
     svg {
       display: block;
     }
+
+    @include dMax {
+      position: relative;
+      z-index: 10;
+    }
   }
 
   &-count {
@@ -1509,6 +1756,10 @@
     padding-top: 64px;
   }
 
+  @include pMax {
+    padding-top: 50px;
+  }
+
   &-arrows {
     position: absolute;
     right: 0;
@@ -1525,6 +1776,10 @@
     @include dMax {
       top: 373px;
       bottom: auto;
+    }
+
+    @include pMax {
+      top: 243px;
     }
 
     &:before {
@@ -1599,6 +1854,10 @@
         padding: 40px 68px 40px 40px;
       }
 
+      @include pMax {
+        padding: 32px 24px 40px;
+      }
+
       h3 {
         display: block;
         margin-bottom: 24px;
@@ -1611,6 +1870,11 @@
           font-size: 18px;
           line-height: 18px;
           margin-bottom: 16px;
+        }
+
+        @include pMax {
+          font-size: 15px;
+          line-height: 15px;
         }
       }
 
@@ -1628,6 +1892,10 @@
           line-height: 150%;
           color: #2d3139;
           margin-bottom: 36px;
+        }
+
+        @include pMax {
+          margin-bottom: 16px;
         }
       }
 
@@ -1720,6 +1988,10 @@
           height: 362px;
         }
 
+        @include pMax {
+          height: 246px;
+        }
+
         a {
           height: 100%;
         }
@@ -1755,6 +2027,10 @@
             margin-top: 0;
           }
         }
+
+        @include pMax {
+          height: 78px;
+        }
       }
 
       a {
@@ -1786,6 +2062,10 @@
 
   @include dMax {
     padding-top: 64px;
+  }
+
+  @include pMax {
+    padding-top: 48px;
   }
 
   &-catalog {
@@ -1822,12 +2102,28 @@
       @include dMax {
         margin-right: 2px;
       }
+
+      @include pMax {
+        margin-right: 0;
+      }
     }
 
     @include dMax {
       width: calc(33.333% - 4px / 3);
 
       &:nth-child(3n) {
+        margin-right: 0;
+
+        @include pMax {
+          margin-right: 2px;
+        }
+      }
+    }
+
+    @include pMax {
+      width: calc(50% - 1px);
+
+      &:nth-child(2n) {
         margin-right: 0;
       }
     }
@@ -1838,7 +2134,10 @@
   padding-top: 96px;
 
   @include dMax {
-    margin-top: 64px;
+    padding-top: 64px;
+  }
+  @include pMax {
+    padding-top: 48px;
   }
 
   &-pag {
@@ -1918,6 +2217,14 @@
     @include dMax {
       padding: 56px 40px 47px;
     }
+
+    @include pMax {
+      padding: 56px 64px;
+    }
+
+    @media screen and (max-width: 370px) {
+      padding: 56px 20px;
+    }
   }
 
   &-title {
@@ -1935,6 +2242,12 @@
       font-size: 25px;
       line-height: 31px;
     }
+
+    @include pMax {
+      font-size: 20px;
+      line-height: 25px;
+      margin-bottom: 80px;
+    }
   }
 
   &-catalog {
@@ -1944,6 +2257,7 @@
     flex-wrap: wrap;
 
     @include dMax {
+      display: block;
       max-width: 740px;
       margin: 0 auto;
     }
@@ -1955,6 +2269,15 @@
 
     @include dMax {
       margin: 0 64px 0;
+    }
+
+    @media screen and (max-width: 690px) {
+      margin: 0 30px 0;
+    }
+
+    @include pMax {
+      width: 100%;
+      margin: 0;
     }
 
     &:nth-child(4n) {
@@ -1972,6 +2295,7 @@
     color: #ffffff;
     padding-bottom: 37px;
     margin-bottom: 24px;
+    white-space: nowrap;
 
     &:before {
       content: '';

@@ -48,6 +48,10 @@ body {
           margin-left: auto;
           margin-right: auto;
           width: calc(100% - 78px);
+
+          @include pMax {
+            width: calc(100% - 30px);
+          }
         }
       }
     }
@@ -147,6 +151,12 @@ body {
     font-size: 25px;
     line-height: 31px;
     margin-bottom: 32px;
+  }
+
+  @include pMax {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 24px;
   }
 }
 

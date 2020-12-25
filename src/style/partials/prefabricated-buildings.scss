@@ -33,6 +33,11 @@
     line-height: 135%;
     text-align: center;
     color: #ffffff;
+
+    @include dMax {
+      font-size: 25px;
+      line-height: 125%;
+    }
   }
 }
 
@@ -96,6 +101,11 @@
   flex-wrap: wrap;
   margin-bottom: -20px;
 
+  @include dMax {
+    padding-top: 48px;
+    margin-bottom: -30px;
+  }
+
   .appointment-block {
     width: calc(33.333% - 40px / 3);
     margin-right: 20px;
@@ -103,12 +113,188 @@
 
     &:nth-child(3n) {
       margin-right: 0;
+
+      @include dMax {
+        margin-right: 30px;
+      }
+    }
+
+    @include dMax {
+      width: calc(50% - 15px);
+      margin-right: 30px;
+      margin-bottom: 30px;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
     }
   }
 }
 
 .prices {
   padding-top: 96px;
+
+  @include dMax {
+    padding-top: 64px;
+  }
+
+  &-table {
+    @include dMax {
+      display: none;
+    }
+  }
+
+  &-mobile {
+    display: none;
+
+    @include dMax {
+      display: block;
+    }
+
+    &-row {
+      display: block;
+      margin: 1px 0;
+      width: 100%;
+
+      &:last-child {
+        .prices-mobile-heading {
+          background: #5b83fd;
+          span {
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 150%;
+            text-transform: uppercase;
+            color: #ffffff;
+          }
+
+          &:before {
+            background-image: url(../img/mobile-price-bef-white.svg);
+            transform: rotate(180deg);
+          }
+        }
+
+        .is-active.prices-mobile-heading {
+          &:before {
+            transform: rotate(0);
+          }
+        }
+
+        .prices-mobile-col span:last-child {
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 150%;
+          color: #5b83fd;
+        }
+      }
+    }
+
+    &-heading {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 40px 0 24px;
+      min-height: 48px;
+      background: #ffffff;
+
+      span {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 150%;
+        color: #2d3139;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 17px;
+        top: 50%;
+        margin-top: -8px;
+        background: center / cover url(../img/mobile-price-bef.svg) no-repeat;
+      }
+
+      &.is-active {
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.09);
+
+        &:before {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-content {
+      display: none;
+      background: #f4f4f4;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px 40px 0 24px;
+    }
+
+    &-col-heading {
+      min-height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 10px 0;
+      border-bottom: 1px solid #dee4f1;
+
+      span {
+        display: block;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 150%;
+        color: #6b7285;
+      }
+    }
+
+    &-col {
+      min-height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 10px 0;
+      border-bottom: 1px solid #dee4f1;
+
+      span {
+        display: block;
+
+        &:first-child {
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 150%;
+          color: #2d3139;
+        }
+
+        &:last-child {
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 150%;
+          color: #6b7285;
+        }
+      }
+    }
+
+    &-desc {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 80px;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 150%;
+      color: #6b7285;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+  }
 
   &-heading {
     display: block;
@@ -191,6 +377,10 @@
     padding: 16px;
     background: #e9ebef;
     display: none;
+
+    @include dMax {
+      padding: 24px;
+    }
 
     &.is-active {
       display: block;
@@ -318,11 +508,25 @@
     padding: 25px 20px;
     box-sizing: border-box;
 
+    @include dMax {
+      display: block;
+      background-color: transparent;
+      padding: 0;
+    }
+
     &-content {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       max-width: 728px;
+
+      @include dMax {
+        max-width: none;
+        box-sizing: border-box;
+        padding: 24px 54px 32px 24px;
+        background: #f4f4f4;
+        margin-bottom: 32px;
+      }
 
       p {
         display: block;
@@ -361,11 +565,21 @@
     &:hover {
       opacity: 0.7;
     }
+
+    @include dMax {
+      width: 100%;
+      max-width: 313px;
+      margin: 0 auto;
+    }
   }
 }
 
 .reviews {
   padding-top: 96px;
+
+  @include dMax {
+    padding-top: 64px;
+  }
 
   &-catalog {
     display: flex;
@@ -373,6 +587,12 @@
     align-items: stretch;
     flex-wrap: wrap;
     margin-bottom: -20px;
+
+    @include dMax {
+      margin-left: -15px;
+      margin-right: -15px;
+      margin-bottom: 0;
+    }
   }
 
   &-item {
@@ -387,6 +607,10 @@
 
     &:nth-child(3n) {
       margin-right: 0;
+
+      @include dMax {
+        margin: 0 15px;
+      }
     }
 
     p {
@@ -399,6 +623,12 @@
       color: #2d3139;
       padding-right: 34px;
       margin-bottom: 32px;
+    }
+
+    @include dMax {
+      width: auto;
+      margin: 0 15px;
+      padding: 56px 0 48px 24px;
     }
   }
 
@@ -471,6 +701,64 @@
 
     &:hover {
       opacity: 0.7;
+    }
+  }
+
+  &-pag {
+    width: 45px;
+    margin: 0 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+      &:nth-child(1) {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 150%;
+        color: #6b7285;
+      }
+
+      &:nth-child(2) {
+        font-size: 25px;
+        color: #979eb0;
+        padding: 0 6px;
+      }
+
+      &:last-child {
+        font-weight: 550;
+        font-size: 11px;
+        line-height: 150%;
+        color: #979eb0;
+      }
+    }
+  }
+
+  &-tools {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 36px auto 0;
+    width: 121px;
+
+    @include dMax {
+      display: flex;
+    }
+
+    .slick-arrow {
+      width: 22px;
+      height: 12px;
+      color: transparent;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: transparent center / auto url(../img/polix-arrow.svg) no-repeat;
+      cursor: pointer;
+
+      &.slick-next {
+        transform: rotate(180deg);
+      }
     }
   }
 }

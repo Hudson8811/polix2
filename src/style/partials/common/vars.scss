@@ -4,6 +4,18 @@
   }
 }
 
+@mixin mMid {
+  @media (max-width: 758px) {
+    @content;
+  }
+}
+
+@mixin pMax {
+  @media (max-width: 580px) {
+    @content;
+  }
+}
+
 @mixin dMax {
   @media (max-width: 1300px) {
     @content;
