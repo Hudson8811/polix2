@@ -813,6 +813,9 @@
           &:last-child,
           &.calc-col:nth-child(4n) {
             margin-right: 13%;
+            @include pMax {
+              margin-right: 0;
+            }
           }
 
           &:nth-child(2) {
