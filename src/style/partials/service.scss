@@ -1,12 +1,20 @@
 .advantages {
   padding-top: 96px;
 
+  @include dMax {
+    padding-top: 64px;
+  }
+
   .container {
     position: relative;
     padding: 96px 0 145px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    @include dMax {
+      padding-bottom: 50px;
+    }
 
     &:before {
       content: '';
@@ -32,6 +40,11 @@
     text-align: center;
     color: #ffffff;
     margin-bottom: 80px;
+
+    @include pMax {
+      font-size: 20px;
+      line-height: 25px;
+    }
   }
 
   &-catalog {
@@ -43,6 +56,83 @@
     flex-wrap: wrap;
     width: calc(100% - 160px);
     margin: 0 auto -20px;
+
+    @include dMax {
+      width: calc(100% - 80px);
+    }
+
+    @include pMax {
+      width: calc(100% - 30px);
+    }
+  }
+
+  &-pag {
+    width: 45px;
+    margin: 0 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+      &:nth-child(1) {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 150%;
+        color: #ffffff;
+      }
+
+      &:nth-child(2) {
+        font-size: 25px;
+        color: #979eb0;
+        padding: 0 6px;
+      }
+
+      &:last-child {
+        font-weight: 550;
+        font-size: 11px;
+        line-height: 150%;
+        color: #979eb0;
+      }
+    }
+  }
+
+  &-tools {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto 0;
+    width: 121px;
+    position: relative;
+    z-index: 10;
+
+    @include dMax {
+      display: flex;
+    }
+
+    .slick-arrow {
+      width: 22px;
+      height: 12px;
+      color: transparent;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: transparent center / auto url(../img/polix-arrow.svg) no-repeat;
+      cursor: pointer;
+
+      &.slick-next {
+        transform: rotate(180deg);
+      }
+
+      &:hover {
+        transform: rotate(180deg);
+        background: transparent center / auto url(../img/polix-arrow-active.svg) no-repeat;
+
+        &.slick-next {
+          transform: rotate(0);
+        }
+      }
+    }
   }
 
   &-item {
@@ -62,6 +152,10 @@
       line-height: 150%;
       text-align: center;
       color: #ffffff;
+    }
+
+    @include dMax {
+      margin: 0 45px;
     }
   }
 
@@ -87,6 +181,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
+
+    @include dMax {
+      display: block;
+    }
+
+    @include pMax {
+      width: 100% !important;
+    }
   }
 
   &-content {
@@ -115,6 +217,21 @@
       background: linear-gradient(0deg, rgba(42, 57, 80, 0.86) 0%, rgba(42, 57, 80, 0) 31.97%),
         linear-gradient(0deg, rgba(42, 57, 80, 0.6), rgba(42, 57, 80, 0.6));
     }
+
+    @include dMax {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding-top: 126px;
+      padding-bottom: 48px;
+      margin-right: 0;
+    }
+
+    @include pMax {
+      padding-top: 163px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
 
   &-title {
@@ -129,6 +246,13 @@
     color: #ffffff;
     margin-top: auto;
     margin-bottom: 32px;
+
+    @include dMax {
+      text-align: center;
+      font-size: 25px;
+      line-height: 125%;
+      max-width: 350px;
+    }
   }
 
   &-prices {
@@ -165,6 +289,10 @@
     align-items: center;
     margin-top: auto;
 
+    @include dMax {
+      margin-top: 86px;
+    }
+
     img {
       display: block;
       margin-right: 12px;
@@ -188,6 +316,10 @@
     width: 295px;
     padding: 56px 24px;
     background: #3e60c1;
+
+    @include dMax {
+      display: none;
+    }
 
     &-title {
       display: block;

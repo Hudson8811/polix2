@@ -232,3 +232,267 @@ body {
     }
   }
 }
+
+.text-page {
+  max-width: 1000px;
+
+  h2 {
+    display: block;
+    font-family: $f2;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: #2d3139;
+    margin-top: 64px;
+    margin-bottom: 32px;
+    max-width: 620px;
+
+    @include pMax {
+      font-size: 25px;
+    }
+  }
+
+  p {
+    display: block;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 150%;
+    color: #2d3139;
+    margin-bottom: 32px;
+  }
+
+  span {
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 150%;
+    color: #2d3139;
+    margin-bottom: 24px;
+    max-width: 345px;
+  }
+
+  ul {
+    list-style: none;
+    display: block;
+
+    li {
+      display: block;
+      position: relative;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 150%;
+      color: #2d3139;
+      padding-left: 24px;
+      box-sizing: border-box;
+
+      & + li {
+        margin-top: 10px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #3e60c1;
+      }
+    }
+  }
+}
+
+#modal1 {
+  padding: 32px 56px 40px;
+  background: #f4f4f4;
+  width: 98%;
+  max-width: 594px;
+
+  @include pMax {
+    padding: 32px 10px 40px;
+  }
+
+  .application-form {
+    padding: 0;
+  }
+}
+.modal1-title {
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  font-family: $f2;
+  color: #2d3139;
+  margin-bottom: 16px;
+}
+
+.modal1-desc {
+  display: block;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 135%;
+  text-align: center;
+  color: #6b7285;
+  margin-bottom: 44px;
+}
+
+.fancybox-close-small {
+  svg path {
+    fill: #6b7285;
+  }
+}
+
+#modal2 {
+  padding: 108px 56px 40px;
+  background: #fff;
+  width: 98%;
+  max-width: 891px;
+
+  @include pMax {
+    padding: 108px 10px 10px;
+  }
+
+  .application-form {
+    padding: 0;
+    background: #fff;
+  }
+
+  .fancybox-close-small {
+    top: 16px;
+
+    @include pMax {
+      top: 0;
+      padding: 0;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .application-form-row label {
+    width: calc(50% - 20px);
+    margin-right: 40px;
+    &:not(.is-active) {
+      border: 1px solid #dee4f1;
+    }
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  .application-form-row {
+    @include dMax {
+      display: block;
+      .application-form-label {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.modal2-title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 76px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+  color: #2d3139;
+  background: #f4f4f4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+  @include pMax {
+    font-size: 14px;
+  }
+}
+
+.modal {
+  &-check-row {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+
+    @include pMax {
+      display: block;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -56px;
+      bottom: 0;
+      display: block;
+      height: 1px;
+      width: calc(100% + 112px);
+      background-color: #dee4f1;
+
+      @include pMax {
+        width: calc(100% + 20px);
+        left: -10px;
+      }
+    }
+  }
+
+  &-check-col {
+    width: calc(33.333% - 240px / 3);
+    margin-right: 120px;
+    margin-bottom: 32px;
+
+    @include dMax {
+      width: calc(50% - 40px);
+      margin-right: 40px;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+
+    @include pMax {
+      width: 100%;
+      margin-right: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+
+      @include dMax {
+        margin-right: 40px;
+      }
+    }
+    p {
+      display: block;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 135%;
+      color: #2d3139;
+      margin-bottom: 24px;
+    }
+
+    .calc-checkbox {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

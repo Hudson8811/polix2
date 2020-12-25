@@ -1,6 +1,10 @@
 .types-filters {
   padding-top: 64px;
 
+  @include pMax {
+    padding-top: 48px;
+  }
+
   &-content {
     display: flex;
     justify-content: space-between;
@@ -9,9 +13,21 @@
     padding: 16px 32px;
     box-sizing: border-box;
 
+    @include dMax {
+      display: block;
+    }
+
     .calc-select {
       max-width: 303px;
       margin-right: 24px;
+
+      @include dMax {
+        max-width: none;
+
+        & + .calc-select {
+          margin-top: 16px;
+        }
+      }
 
       .calc-select-heading {
         padding: 0 16px;
@@ -31,6 +47,11 @@
     text-decoration-line: underline;
     color: #6b7285;
     margin-right: 24px;
+
+    @include dMax {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
   }
 
   &-link {
@@ -42,13 +63,28 @@
     text-decoration-line: underline;
     color: #5b83fd;
     margin-left: auto;
+
+    @include dMax {
+      margin-top: 16px;
+    }
   }
 }
 
 .types {
+  margin: 0 -20px;
+
+  @include pMax {
+    margin: 0;
+  }
+
   .slick-list {
     margin: -20px;
     padding: 20px;
+
+    @include pMax {
+      margin: 0;
+      padding: 0;
+    }
 
     .slick-slide {
       margin: 0 20px;
@@ -79,6 +115,32 @@
 
     &:nth-child(3n) {
       margin-right: 0;
+
+      @include dMax {
+        margin-right: 20px;
+
+        @include pMax {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @include dMax {
+      width: calc(50% - 10px);
+      margin-right: 20px;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+
+    @include pMax {
+      width: 100%;
+      margin-right: 0;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
     }
 
     &-heading {
@@ -170,6 +232,11 @@
     background: #ececed;
     padding: 0 32px 0 40px;
     box-sizing: border-box;
+
+    @include pMax {
+      margin-top: 48px;
+      width: 100%;
+    }
   }
 
   &-text-pag {

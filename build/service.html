@@ -44,7 +44,7 @@
                       </ul>
                   </li>
                   <li>
-                      <a data-id="2" href="#">Калькулятор</a>
+                      <a data-id="2" href="#"  >Калькулятор</a>
                       <ul class="header-menu-siblings">
                           <li><a href="#">Производственные здания</a></li>
                           <li><a href="#">Склады и ангары</a></li>
@@ -135,7 +135,7 @@
                       </ul>
                   </li>
               </ul>
-              <a href="#" class="header-application">
+              <a href="#" class="header-application modal1-btn">
                   <span>оформить заявку</span>
                   <img src="img/pen.svg" alt="">
               </a>
@@ -446,6 +446,20 @@
               </div>
         
               <div class="prices-content-wrapper">
+                <div class="calc-select prices-mobile-tabs">
+                  <span class="prices-mobile-tabs-title">Укажите ширину здания</span>
+                  <div class="calc-select-heading">
+                    <span>12 м.</span>
+                  </div>
+                  <ul class="calc-select-content">
+                    <li><span data-content="1" >12 м.</span></li>
+                    <li><span data-content="2" >15 м.</span></li>
+                    <li><span data-content="3" >18 м.</span></li> 
+                    <li><span data-content="4" >21 м.</span></li> 
+                    <li><span data-content="5" >24 м.</span></li>
+                  </ul>
+                </div>
+        
                <div data-content="1" class="prices-content is-active">
                  <div class="prices-table">
                    <div class="prices-row">
@@ -531,6 +545,7 @@
                  </div>
         
                  <div class="prices-mobile">
+                  
                    <div class="prices-mobile-row">
                      <div class="prices-mobile-heading">
                        <span>Несущий каркас</span>
@@ -1745,7 +1760,7 @@
         
                  <div class="prices-mobile-row">
                    <div class="prices-mobile-heading">
-                     <span>Монта�� несущего каркаса</span>
+                     <span>Монтаж несущего каркаса</span>
                    </div>
                    <div class="prices-mobile-content">
                      <div class="prices-mobile-col-heading">
@@ -2145,7 +2160,7 @@
                       <p>Итого: <span>0 руб.</span></p>
                       <a href="#">Деталировка по стоимости</a>
                   </div>
-                  <button class="calc-btn"> <span>отправить заявку</span> </button>
+                  <button class="calc-btn modal2-btn"> <span>отправить заявку</span> </button>
                  </div>
                </div>
               </form>
@@ -2363,6 +2378,14 @@
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque </p>
                     </div>
                 </div>
+        
+                <div class="advantages-tools">
+                    <div class="advantages-pag">
+                      <span>01</span>
+                      <span>|</span>
+                      <span>04</span>
+                    </div>
+                  </div>
             </div>
         </div>
         <div class="reviews">
@@ -2484,12 +2507,12 @@
         <div class="application">
             <div class="container">
              <div class="application-row">
-               <div class="application-col">
+               <div class="application-col application-text-col">
                  <h2 class="section-title">But I must explain to you how all this mistaken idea</h2>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. <a href="#" class="application-link">Еще</a> </p>
                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>    
                  <p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem</p>
-                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p></p>
+                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
                </div>
                <div class="application-col">
                  <h2 class="section-title">Отправить заявку и получить коммерческое предложение</h2>
@@ -2673,7 +2696,192 @@
 
       </main>
     </div>
-
+    <div style="display: none;" class="modal"  id="modal1">
+        <div class="modal1-wrapper">
+            <h2 class="modal1-title">Пригласите нас в тендер</h2>
+            <p class="modal1-desc">Мы смоэем предложить самые выгодные <br>
+                условия сотрудничества</p>
+            <form class="application-form">
+                <label class="application-form-label">
+                  <input type="text">
+                  <span>ФИО</span>
+                </label>
+                <div class="application-form-row">
+                  <label class="application-form-label">
+                    <input type="email">
+                    <span>email адрес</span>
+                  </label>
+                  <label class="application-form-label">
+                    <input type="text">
+                    <span>номер телефона</span>
+                  </label>
+                </div>
+                <label class="application-form-label application-form-label-for_text">
+                  <textarea></textarea>
+                  <span>Сообщение</span>
+                </label>
+                <label class="application-form-label application-form-label-for_file">
+                  <input type="file">
+                  <span>Добавить файл</span>
+                  <p class="application-form-file-name"></p>
+                  <p class="application-form-file-btn">выбрать</p>
+                </label>
+     
+                <div class="application-form-submit">
+                  <div class="application-form-polic">
+                    <label class="application-form-polic-check">
+                      <input type="checkbox">
+                      <b></b>
+                    </label>
+                    <p>Я принимаю условия <a href="#">пользоваського соглашения</a></p>
+                  </div>
+                  <button class="calc-btn">оформить заявку</button>
+                </div>
+              </form>
+        </div>
+    </div>
+    <div style="display: none;" class="modal"  id="modal2">
+        <div class="modal1-wrapper">
+            <h2 class="modal2-title">Укажите вводные данные для расчета стоимости</h2>
+            <form class="application-form">
+                <div class="modal-check-row">
+                  <div class="modal-check-col">
+                    <p>У вас есть участок под строительство?</p>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="1">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Да</span>
+                    </label>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="2">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Нет</span>
+                    </label>
+                  </div>
+    
+                  <div class="modal-check-col">
+                    <p>У вас есть разрешение на строительство?</p>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="1">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Да</span>
+                    </label>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="2">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Нет</span>
+                    </label>
+                  </div>
+    
+                  <div class="modal-check-col">
+                    <p>На вашем участке есть фундамент?</p>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="1">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Да</span>
+                    </label>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="2">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Нет</span>
+                    </label>
+                  </div>
+    
+                  <div class="modal-check-col">
+                    <p>Потребуется ли монтаж мезонина (антресоли)</p>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="1">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Да</span>
+                    </label>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="2">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Нет</span>
+                    </label>
+                  </div>
+    
+                  <div class="modal-check-col">
+                    <p>Требуется ли заливка полов?</p>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="1">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Да</span>
+                    </label>
+                    <label class="calc-checkbox">
+                      <span class="calc-checkbox-icon">
+                        <input type="radio" name="1" id="2">
+                        <b></b>
+                      </span>
+                      <span class="calc-checkbox-text">Нет</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="application-form-row">
+                  <label class="application-form-label">
+                    <input type="text">
+                    <span>ФИО</span>
+                  </label>
+                  <label class="application-form-label">
+                    <input type="text">
+                    <span>номер телефона</span>
+                  </label>
+                </div>
+                <div class="application-form-row">
+                  <label class="application-form-label">
+                    <input type="email">
+                    <span>email адрес</span>
+                  </label>
+                  <label class="application-form-label">
+                    <input type="text">
+                    <span>место строительства</span>
+                  </label>
+                </div>
+                <div class="application-form-row">
+                  <label class="application-form-label">
+                    <input type="text">
+                    <span>ваши пожелания</span>
+                  </label>
+                  <label class="application-form-label application-form-label-for_file">
+                    <input type="file">
+                    <span>Добавить файл</span>
+                    <p class="application-form-file-name"></p>
+                    <p class="application-form-file-btn">выбрать</p>
+                  </label>
+                </div>
+                
+     
+                <div class="application-form-submit">
+                  <div class="application-form-polic">
+                    <label class="application-form-polic-check">
+                      <input type="checkbox">
+                      <b></b>
+                    </label>
+                    <p>Я принимаю условия <a href="#">пользоваського соглашения</a></p>
+                  </div>
+                  <button class="calc-btn">оформить заявку</button>
+                </div>
+              </form>
+        </div>
+    </div>
     <script src="js/main.js"></script>
   </body>
 </html>

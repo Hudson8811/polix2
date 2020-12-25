@@ -546,6 +546,10 @@
       margin-right: 0;
     }
 
+    @include pMax {
+      padding: 24px 24px 40px;
+    }
+
     &:before {
       content: '';
       display: block;

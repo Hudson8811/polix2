@@ -47,6 +47,8 @@
   justify-content: flex-start;
   align-items: center;
   padding-top: 24px;
+  flex-wrap: wrap;
+  margin-bottom: -10px;
 
   li + li {
     margin-left: 40px;
@@ -54,6 +56,7 @@
 
   li {
     position: relative;
+    margin-bottom: 10px;
 
     &:before {
       content: '/';
@@ -106,6 +109,11 @@
     margin-bottom: -30px;
   }
 
+  @include pMax {
+    display: block;
+    margin-bottom: -2px;
+  }
+
   .appointment-block {
     width: calc(33.333% - 40px / 3);
     margin-right: 20px;
@@ -128,11 +136,73 @@
         margin-right: 0;
       }
     }
+
+    @include pMax {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 2px;
+    }
   }
 }
 
 .prices {
   padding-top: 96px;
+
+  .prices-mobile-tabs {
+    display: none;
+
+    .prices-mobile-tabs-title {
+      display: block;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 150%;
+      text-align: center;
+      color: #2d3139;
+      margin-bottom: 16px;
+    }
+    @include pMax {
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: calc(100% - 32px);
+
+      .calc-select-heading {
+        border: none;
+      }
+    }
+
+    .calc-select-heading {
+      padding-left: 16px;
+
+      span {
+        font-weight: 550;
+        font-size: 15px;
+        line-height: 150%;
+        color: #2d3139;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        background: center/auto url(../img/mobile-price-bef.svg) no-repeat;
+      }
+    }
+
+    .calc-select-content {
+      padding-left: 16px;
+      border: none;
+
+      span {
+        font-weight: 550;
+        font-size: 15px;
+        line-height: 150%;
+        color: #2d3139;
+      }
+    }
+  }
 
   @include dMax {
     padding-top: 64px;
@@ -153,7 +223,7 @@
 
     &-row {
       display: block;
-      margin: 1px 0;
+      margin: 2px 0;
       width: 100%;
 
       &:last-child {
@@ -195,9 +265,13 @@
       align-items: center;
       width: 100%;
       box-sizing: border-box;
-      padding: 0 40px 0 24px;
+      padding: 10px 40px 10px 24px;
       min-height: 48px;
       background: #ffffff;
+
+      @include dMax {
+        padding: 10px 40px 10px 16px;
+      }
 
       span {
         font-weight: 500;
@@ -233,6 +307,10 @@
       box-sizing: border-box;
       width: 100%;
       padding: 12px 40px 0 24px;
+
+      @include dMax {
+        padding: 12px 35px 0 16px;
+      }
     }
 
     &-col-heading {
@@ -301,6 +379,10 @@
     width: 392px;
     margin: 0 auto;
 
+    @include pMax {
+      display: none;
+    }
+
     &-title {
       display: block;
       margin-bottom: 24px;
@@ -309,6 +391,10 @@
       line-height: 18px;
       text-align: center;
       color: #6b7285;
+
+      @include pMax {
+        display: none;
+      }
     }
 
     &-tabs {
@@ -382,11 +468,17 @@
       padding: 24px;
     }
 
+    @include pMax {
+      padding: 16px;
+      padding-top: 114px;
+    }
+
     &.is-active {
       display: block;
     }
 
     &-wrapper {
+      position: relative;
       margin-top: 28px;
     }
   }
@@ -417,6 +509,10 @@
       & > .prices-col:last-child {
         width: 772px;
 
+        @media screen and (max-width: 1400px) {
+          width: 610px;
+        }
+
         & > .prices-row {
           flex-wrap: wrap;
 
@@ -425,6 +521,10 @@
 
             .prices-col {
               width: 127px;
+
+              @media screen and (max-width: 1400px) {
+                width: 100px;
+              }
             }
           }
 
@@ -470,6 +570,14 @@
     justify-content: center;
     flex-shrink: 0;
 
+    @media screen and (max-width: 1400px) {
+      width: 100px;
+
+      span {
+        text-align: center;
+      }
+    }
+
     &:last-child {
       margin-right: 0;
     }
@@ -495,6 +603,7 @@
         font-size: 15px;
         line-height: 150%;
         color: #2d3139;
+        text-align: left;
       }
     }
   }
@@ -526,6 +635,11 @@
         padding: 24px 54px 32px 24px;
         background: #f4f4f4;
         margin-bottom: 32px;
+
+        @include pMax {
+          padding: 16px 16px 24px 16px;
+          align-items: flex-start;
+        }
       }
 
       p {
@@ -561,6 +675,7 @@
     transition: 0.2s;
     background: #5b83fd;
     border-radius: 3px;
+    flex-shrink: 0;
 
     &:hover {
       opacity: 0.7;
@@ -766,19 +881,65 @@
 .application {
   padding-top: 96px;
 
+  &-link {
+    display: none;
+
+    @include pMax {
+      display: inline;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 150%;
+      color: #5b83fd;
+    }
+  }
+
+  &-text-col.is-active {
+    .application-link {
+      display: none;
+    }
+
+    p + p {
+      display: block;
+    }
+  }
+
+  @include dMax {
+    padding-top: 64px;
+  }
+
+  @include pMax {
+    padding-top: 48px;
+  }
+
   &-row {
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
+
+    @include dMax {
+      flex-direction: column;
+    }
   }
 
   &-col {
     box-sizing: border-box;
     width: calc(50% - 50px);
 
+    @include dMax {
+      width: 100%;
+    }
+
     &:first-child {
       margin-right: auto;
       padding-right: 58px;
+
+      @include dMax {
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 0;
+        order: 1;
+        margin-top: 64px;
+      }
     }
   }
 
@@ -786,6 +947,15 @@
     margin-bottom: 48px;
     text-align: left;
     max-width: 441px;
+
+    @include dMax {
+      text-align: center;
+      margin: 0 auto 32px;
+    }
+
+    @include pMax {
+      margin-bottom: 24px;
+    }
   }
 
   p {
@@ -797,6 +967,10 @@
 
     & + p {
       margin-top: 20px;
+
+      @include pMax {
+        display: none;
+      }
     }
   }
 
@@ -805,6 +979,14 @@
     display: block;
     padding: 68px 72px 56px 56px;
     background: #f4f4f4;
+
+    @include dMax {
+      padding: 52px 40px;
+    }
+
+    @include pMax {
+      padding: 44px 16px 32px;
+    }
 
     &-label {
       display: block;
@@ -818,6 +1000,10 @@
       transition: 0.2s;
       margin-bottom: 20px;
       background-color: #fff;
+
+      @include pMax {
+        margin-bottom: 16px;
+      }
 
       input,
       textarea {
@@ -929,9 +1115,18 @@
       align-items: stretch;
       flex-wrap: wrap;
 
+      @include pMax {
+        display: block;
+      }
+
       label {
         width: calc(50% - 12px);
         margin-right: 24px;
+
+        @include pMax {
+          width: 100%;
+          margin-right: 0;
+        }
 
         &:nth-child(2n) {
           margin-right: 0;
@@ -944,8 +1139,19 @@
       justify-content: flex-start;
       align-items: center;
 
+      @include pMax {
+        flex-direction: column;
+      }
+
       .calc-btn {
         margin-left: auto;
+
+        @include pMax {
+          margin: 16px auto 24px;
+          order: -1;
+          max-width: none;
+          width: 100%;
+        }
       }
     }
 

@@ -5,6 +5,21 @@
   background-position: center;
   background-repeat: no-repeat;
 
+  &-container {
+    @include pMax {
+      width: 100% !important;
+    }
+  }
+
+  @include dMax {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    flex-direction: column;
+  }
+
   &:before {
     content: '';
     display: block;
@@ -26,11 +41,54 @@
     line-height: 43px;
     font-family: $f2;
     color: #ffffff;
+
+    @include dMax {
+      max-width: 350px;
+      text-align: center;
+      font-size: 25px;
+      line-height: 125%;
+    }
   }
 }
 
 .design-prices {
   padding-top: 96px;
+
+  @include dMax {
+    padding-top: 64px;
+  }
+
+  @include pMax {
+    margin-top: 48px;
+  }
+
+  .prices-mobile {
+    display: none;
+
+    @include dMax {
+      display: block;
+    }
+  }
+
+  &-mobile-desc {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 56px;
+    background: #ffffff;
+    font-size: 15px;
+    line-height: 150%;
+    text-align: center;
+    color: #6b7285;
+    width: 100%;
+    margin-top: 1px;
+    box-sizing: border-box;
+    padding: 10px;
+
+    @include dMax {
+      display: flex;
+    }
+  }
 
   &-wrapper {
     box-sizing: border-box;
@@ -43,6 +101,14 @@
     justify-content: flex-start;
     align-items: stretch;
     flex-wrap: wrap;
+
+    .design-prices-mobile-desc {
+      display: flex;
+    }
+
+    @include dMax {
+      display: none;
+    }
 
     div {
       min-height: 56px;
@@ -194,6 +260,14 @@
 .task {
   padding-top: 96px;
 
+  @include dMax {
+    padding-top: 64px;
+  }
+
+  @include pMax {
+    padding-top: 48px;
+  }
+
   .section-title {
     margin-bottom: 32px;
   }
@@ -220,6 +294,12 @@
         width: calc(33.333% - 40px / 3);
         margin-right: 20px;
 
+        @include dMax {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
         &:nth-child(3n) {
           margin-right: 0;
         }
@@ -227,6 +307,12 @@
         &-comment {
           width: calc(66.9% - 10px);
           margin-right: 0;
+
+          @include dMax {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+          }
         }
       }
     }
@@ -235,6 +321,12 @@
       .task-item {
         width: calc(50% - 10px);
         margin-right: 20px;
+
+        @include dMax {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
 
         &:nth-child(2n) {
           margin-right: 0;
@@ -320,10 +412,21 @@
       border: 1px solid #dee4f1;
       padding: 0 16px;
       font-family: $f1;
+
+      @include pMax {
+        flex-grow: 1;
+        min-width: 1px;
+      }
     }
 
     .calc-checkbox {
       margin: 0 12px 14px;
+
+      @include pMax {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+      }
 
       .calc-checkbox-icon {
         margin-right: 10px;
@@ -344,6 +447,10 @@
     align-items: stretch;
     margin-left: auto;
 
+    @include pMax {
+      margin-top: 20px;
+    }
+
     span {
       display: block;
       font-weight: normal;
@@ -359,6 +466,11 @@
       padding-right: 15px;
       box-sizing: border-box;
       margin-bottom: 14px;
+
+      @include pMax {
+        display: block;
+        padding-right: 0;
+      }
 
       .calc-radio {
         margin: 0;
@@ -378,6 +490,7 @@
       height: 20px;
       border-radius: 50%;
       background: #ececed center / auto url(../img/qv-no_active.svg) no-repeat;
+      flex-shrink: 0;
     }
   }
 
@@ -432,17 +545,33 @@
     align-items: center;
     margin: 0 12px 14px;
 
+    @include pMax {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
     p {
       margin-bottom: 0;
       font-weight: normal;
       font-size: 13px;
       line-height: 150%;
       color: #2d3139;
+
+      @include pMax {
+        flex-shrink: 0;
+        max-width: 70%;
+      }
     }
 
     input[type='text'] {
       width: 66px;
       margin: 0 8px 0 10px;
+
+      @include pMax {
+        width: auto;
+        max-width: none !important;
+      }
     }
   }
 
@@ -455,6 +584,10 @@
     margin-top: 16px;
     border-top: 1px solid #dee4f1;
 
+    @include pMax {
+      display: block;
+    }
+
     p {
       display: block;
       font-weight: normal;
@@ -463,6 +596,11 @@
       color: #2d3139;
       margin-bottom: 0;
       margin-right: 6px;
+
+      @include pMax {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
     }
 
     .calc-radio {
@@ -471,6 +609,10 @@
       margin-right: 6px;
       margin-bottom: 0;
       padding: 3px 8px 3px 6px;
+
+      @include pMax {
+        margin: 10px 0 0;
+      }
 
       span {
         font-weight: normal;
@@ -527,8 +669,21 @@
       opacity: 0.7;
     }
 
+    @include pMax {
+      margin: 0 auto;
+    }
+
     & + & {
       margin-left: 24px;
+
+      @include dMax {
+        margin-left: 0;
+        margin-top: 20px;
+
+        @include pMax {
+          margin-left: auto;
+        }
+      }
     }
 
     &.task-pdf-btn {
@@ -541,11 +696,19 @@
     justify-content: flex-start;
     align-items: center;
 
+    @include dMax {
+      display: block;
+    }
+
     .calc-btn {
       max-width: 251px;
       width: 100%;
       margin-left: 32px;
       min-width: 1px;
+
+      @include pMax {
+        margin: 0 auto 20px;
+      }
     }
 
     .application-form-submit {
@@ -554,6 +717,13 @@
       width: 50%;
       max-width: 535px;
       margin-left: auto;
+
+      @include dMax {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        padding-left: 0;
+      }
     }
   }
 }

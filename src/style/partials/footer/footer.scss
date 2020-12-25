@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding-top: 120px;
 
-  @include mMid {
+  @include dMax {
     padding-top: 96px;
 
     .container {
