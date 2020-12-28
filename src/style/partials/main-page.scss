@@ -1040,6 +1040,19 @@
     cursor: pointer;
     transition: 0.2s;
 
+    &-prompt {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      margin-top: -10px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #ececed center / auto url(../img/qv-no_active.svg) no-repeat;
+    }
+
     &-heading {
       position: relative;
       z-index: 2;
@@ -1061,19 +1074,6 @@
         color: #2d3139;
         overflow: hidden;
         white-space: nowrap;
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        left: 16px;
-        top: 50%;
-        margin-top: -10px;
-        display: block;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #ececed center / auto url(../img/qv-no_active.svg) no-repeat;
       }
 
       &:after {
@@ -1130,7 +1130,7 @@
       .calc-select-heading {
         box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.15);
 
-        &:before {
+        .calc-select-prompt {
           background: #5b83fd center / auto url(../img/qv.svg) no-repeat;
         }
 
