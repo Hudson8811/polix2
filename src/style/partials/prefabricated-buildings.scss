@@ -1026,7 +1026,7 @@
         resize: none;
       }
 
-      span {
+      span:not(.wpcf7-form-control-wrap):not(.wpcf7-not-valid-tip) {
         position: absolute;
         left: 16px;
         bottom: 30%;
@@ -1045,7 +1045,7 @@
         box-sizing: border-box;
         border-radius: 3px;
 
-        span {
+        span:not(.wpcf7-form-control-wrap):not(.wpcf7-not-valid-tip) {
           bottom: 100%;
           left: -1px;
           font-weight: normal;

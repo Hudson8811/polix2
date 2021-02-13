@@ -137,7 +137,7 @@
         }
       }
 
-      & + li {
+      &+li {
         margin-top: 35px;
 
         @include dMax {
@@ -150,7 +150,7 @@
       display: none;
       padding: 20px 11px 24px;
 
-      li + li {
+      li+li {
         margin-top: 10px;
       }
 
@@ -275,7 +275,7 @@
       display: none;
     }
 
-    li + li {
+    li+li {
       margin-left: 32px;
     }
 
@@ -428,5 +428,93 @@
         }
       }
     }
+  }
+}
+
+
+
+
+@media (min-width: 1301px) {
+  .header {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .header-mobile-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-menu li+li {
+    margin-top: 30px;
+  }
+
+  .header-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+
+@media (min-width: 1301px) and (max-height:965px) {
+  .header-content {
+    padding: 25px 0 25px 50px;
+  }
+
+  .header-menu {
+    margin-bottom: 30px;
+  }
+
+  .header-social {
+    margin-top: 20px;
+  }
+
+  .header-menu li+li {
+    margin-top: 23px;
+  }
+}
+
+@media (min-width: 1301px) and (max-height:805px) {
+  .header-disclaimer {
+    padding: 10px 50px 10px;
+  }
+}
+
+@media (min-width: 1301px) and (max-height:748px) {
+  .header-menu li+li {
+    margin-top: 15px;
+  }
+
+  .header-menu li a {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 1301px) and (max-height:675px) {
+
+  .header-menu {
+    margin-bottom: 10px;
+  }
+
+  .header-contacts {
+    display: block;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 1300px) {
+
+  .header-mobile-wrapper {
+    max-height: calc(100vh - 64px);
+    overflow: auto;
   }
 }
