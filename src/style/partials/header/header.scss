@@ -3,6 +3,20 @@
   z-index: 200;
   width: 300px;
 
+	&::before{
+		content: "";
+		display: block;
+		position: absolute;
+		right: 100%;
+		top: 0;
+		width: calc(100vw - 1920px);
+		height: 100%;
+		background: #ffffff;
+		@include dMax {
+			display: none;
+		}
+	}
+
   @include dMax {
     position: fixed;
     width: 100%;
