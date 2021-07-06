@@ -12,7 +12,7 @@
 
   &-top-row {
     box-sizing: border-box;
-    padding: 80px 88px 52px;
+    padding: 80px 7% 52px;
     background: #384359;
     display: flex;
 	  justify-content: space-between;
@@ -170,7 +170,7 @@
   &-bot-row {
     position: relative;
     box-sizing: border-box;
-    padding: 40px 88px 48px;
+    padding: 40px 7% 48px;
     background: #384359;
     display: flex;
     justify-content: space-between;
@@ -199,9 +199,9 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 88px;
+      left: 7%;
       height: 1px;
-      width: calc(100% - 176px);
+      width: calc(100% - 14%);
       background: #454e62;
 
       @include dMax {
