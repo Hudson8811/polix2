@@ -1,5 +1,17 @@
 .text-banner {
-  .container {
+	&:not(:first-child){
+		padding-top: 80px;
+
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
+
+	.container {
     position: relative;
     min-height: 400px;
     background-size: cover;
@@ -146,7 +158,17 @@
 }
 
 .prices {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
+
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   .prices-mobile-tabs {
     display: none;
@@ -204,9 +226,6 @@
     }
   }
 
-  @include dMax {
-    padding-top: 64px;
-  }
 
   &-table {
     @include dMax {
@@ -690,11 +709,17 @@
 }
 
 .reviews {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-catalog {
     display: flex;
@@ -879,7 +904,17 @@
 }
 
 .application {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
+
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-link {
     display: none;
@@ -944,7 +979,6 @@
   }
 
   .section-title {
-    margin-bottom: 48px;
     text-align: left;
     max-width: 441px;
 

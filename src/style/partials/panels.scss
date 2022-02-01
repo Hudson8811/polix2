@@ -1,13 +1,15 @@
 .appointment-section {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    padding-top: 48px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   .appointment-catalog {
     padding-top: 0;
@@ -53,6 +55,20 @@
 }
 
 .just-banner {
+	&-container{
+		&:not(:first-child){
+			padding-top: 80px;
+
+			@include dMax {
+				padding-top: 48px;
+			}
+
+			@include pMax {
+				padding-top: 40px;
+			}
+		}
+	}
+
   position: relative;
   padding: 111px 81px;
   background-size: cover;
@@ -129,15 +145,17 @@
 }
 
 .shades {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    padding-top: 48px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-catalog {
     display: block;
@@ -241,15 +259,17 @@
 }
 
 .mounting {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    padding-top: 48px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-wrapper {
     display: block;
@@ -472,15 +492,17 @@
 }
 
 .tabs {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    padding-top: 48px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   .tabs-scroll {
     position: relative;
@@ -515,13 +537,7 @@
     height: 423px;
   }
 
-  .section-title {
-    margin-bottom: 32px;
 
-    @include dMax {
-      margin-bottom: 16px;
-    }
-  }
 
   &-desc {
     display: block;

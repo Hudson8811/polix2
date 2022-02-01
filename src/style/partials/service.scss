@@ -1,9 +1,15 @@
 .advantages {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   .container {
     position: relative;
@@ -177,7 +183,19 @@
 }
 
 .bannerBar {
-  .container {
+	&:not(:first-child){
+		padding-top: 80px;
+
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
+
+	.container {
     display: flex;
     justify-content: flex-start;
     align-items: stretch;

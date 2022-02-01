@@ -1,4 +1,16 @@
 .banner {
+	&:not(:first-child){
+		padding-top: 80px;
+
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
+
   &-mobile-btn {
     position: relative;
     z-index: 2;
@@ -278,15 +290,17 @@
 }
 
 .dignity {
-  padding-top: 80px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 48px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    padding-top: 40px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-wrapper {
     display: flex;
@@ -383,15 +397,17 @@
 }
 
 .appointment {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    margin-top: 48px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-row {
     display: flex;
@@ -690,15 +706,19 @@
 
 .calc {
   &-section {
-    padding-top: 96px;
+	  &:not(:first-child){
+		  padding-top: 80px;
 
-    @include dMax {
-      padding-top: 64px;
-    }
+		  @include dMax {
+			  padding-top: 48px;
+		  }
+
+		  @include pMax {
+			  padding-top: 40px;
+		  }
+	  }
 
     @include pMax {
-      padding-top: 40px;
-
       .container {
         width: 100% !important;
       }
@@ -920,7 +940,7 @@
       align-items: center;
       width: 100%;
 
-      p {
+      /*p {
         display: block;
         font-weight: 500;
         font-size: 20px;
@@ -945,7 +965,11 @@
 
       .calc-btn {
         margin-left: auto;
-      }
+      }*/
+
+	    .wpcf7{
+		    width: 100%;
+	    }
 
       &.is-active {
         display: flex;
@@ -974,11 +998,11 @@
     &:last-child {
       border-bottom: none;
 
-      @include dMax {
+      /*@include dMax {
         padding: 20px 40px;
         order: -1;
         border-bottom: 1px solid #dee4f1;
-      }
+      }*/
     }
 
     &-revers {
@@ -1288,19 +1312,17 @@
 }
 
 .technologies {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    display: none;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    padding-top: 48px;
-  }
-
-  .section-title {
-    margin-bottom: 32px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-desc {
     display: block;
@@ -1531,7 +1553,17 @@
 }
 
 .how-work {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
+
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-pag {
     width: 45px;
@@ -1757,17 +1789,20 @@
 }
 
 .objects {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    padding-top: 50px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
-  &-arrows {
+
+	&-arrows {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -2065,15 +2100,17 @@
 }
 
 .brands {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    padding-top: 48px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-catalog {
     display: flex;
@@ -2138,14 +2175,17 @@
 }
 
 .polix {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
-  @include pMax {
-    padding-top: 48px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-pag {
     width: 45px;

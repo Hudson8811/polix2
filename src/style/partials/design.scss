@@ -9,6 +9,18 @@
     @include pMax {
       width: 100% !important;
     }
+
+	  &:not(:first-child){
+		  padding-top: 80px;
+
+		  @include dMax {
+			  padding-top: 48px;
+		  }
+
+		  @include pMax {
+			  padding-top: 40px;
+		  }
+	  }
   }
 
   @include dMax {
@@ -52,17 +64,20 @@
 }
 
 .design-prices {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    margin-top: 48px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
-  .prices-mobile {
+
+	.prices-mobile {
     display: none;
 
     @include dMax {
@@ -258,19 +273,18 @@
 }
 
 .task {
-  padding-top: 96px;
+	&:not(:first-child){
+		padding-top: 80px;
 
-  @include dMax {
-    padding-top: 64px;
-  }
+		@include dMax {
+			padding-top: 48px;
+		}
 
-  @include pMax {
-    padding-top: 48px;
-  }
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
-  .section-title {
-    margin-bottom: 32px;
-  }
 
   &-desc {
     display: block;

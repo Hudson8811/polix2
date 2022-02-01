@@ -1,5 +1,15 @@
 .contacts {
-  padding-top: 48px;
+	&:not(:first-child){
+		padding-top: 80px;
+
+		@include dMax {
+			padding-top: 48px;
+		}
+
+		@include pMax {
+			padding-top: 40px;
+		}
+	}
 
   &-breadcrumbs {
     .breadcrumbs {
