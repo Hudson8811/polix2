@@ -1875,6 +1875,14 @@
     @include dMax {
       display: block;
     }
+	 /* &--slider{
+		  .objects-col:nth-child(2){
+			  @media screen and (min-width: 1301px) {
+				  padding-top: 52px;
+				  padding-bottom: 52px;
+			  }
+		  }
+	  }*/
   }
 
   &-col {
@@ -1896,6 +1904,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: stretch;
+	    position: relative;
 
       @include dMax {
         width: 100%;
@@ -1957,7 +1966,7 @@
         color: #6b7285;
       }
 
-      a {
+      a:not(.calc-btn) {
         display: block;
         margin-top: 48px;
         font-weight: 500;
@@ -1975,6 +1984,16 @@
           opacity: 0.7;
         }
       }
+	    .calc-btn{
+		    margin-top: 0;
+		    position: absolute;
+		    bottom: 12px;
+		    left: 54px;
+		    @include dMax {
+			   position: static;
+			    margin-top: 40px;
+		    }
+	    }
     }
   }
 
